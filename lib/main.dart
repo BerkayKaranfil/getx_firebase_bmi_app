@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
       builder: (context, Orientation, ScreenType) {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
+          
           getPages: AppPages.routes,
           initialRoute: Routes.SPLASH,
           enableLog: true, // Geliştirme bitince false'a çek

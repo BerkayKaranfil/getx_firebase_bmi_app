@@ -3,6 +3,8 @@ import 'package:getx_firebase_bmi_app/modules/detail/detail_binding.dart';
 import 'package:getx_firebase_bmi_app/modules/detail/detail_view.dart';
 import 'package:getx_firebase_bmi_app/modules/home/home_binding.dart';
 import 'package:getx_firebase_bmi_app/modules/home/home_view.dart';
+import 'package:getx_firebase_bmi_app/modules/login/login_binding.dart';
+import 'package:getx_firebase_bmi_app/modules/login/login_view.dart';
 import 'package:getx_firebase_bmi_app/modules/splash/splash_binding.dart';
 import 'package:getx_firebase_bmi_app/modules/splash/splash_view.dart';
 
@@ -25,6 +27,11 @@ class AppPages {
       name: Routes.DETAIL,
       page: () => DetailScreen(),
       binding: DetailBinding(),
+    ),
+    GetPage(
+      name: Routes.LOGIN,
+      page: () => LoginScreen(),
+      binding: LoginBinding(),
     ),
   ];
 }
