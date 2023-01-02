@@ -23,6 +23,7 @@ class LoginScreen extends GetView<LoginController> {
           padding: EdgeInsets.only(right: 5.w, left: 5.w),
           child: Column(
             children: [
+              //Image.asset("assets/loginhome.png")
               SizedBox(
                 height: 30.h,
               ),
@@ -49,8 +50,8 @@ class LoginScreen extends GetView<LoginController> {
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(5.h))),
                     onPressed: () {
-                      controller.auth.signInUser(controller.email.text, controller.password.text);
-                     
+                     // controller.auth.signInUser(controller.email.text, controller.password.text);
+                     controller.loginWait();
                     },
                     child: Row(
                       children: [

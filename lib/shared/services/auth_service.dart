@@ -10,7 +10,7 @@ class AuthService extends GetxService {
 
 
 
-   Future<void>createUser(inputEmail, inputPassword) async {
+   createUser(inputEmail, inputPassword) async {
     try {
       final credential = await FirebaseAuth.instance
           .createUserWithEmailAndPassword(
@@ -34,8 +34,8 @@ class AuthService extends GetxService {
     try {
       final credential = await FirebaseAuth.instance
           .signInWithEmailAndPassword(
-              email: inputEmail, password: inputPassword)
-          .then((value) => Get.toNamed(Routes.HOME));
+              email: inputEmail, password: inputPassword);
+         // .then((value) => Get.toNamed(Routes.HOME));
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         return Get.defaultDialog(title: "No user found for that email.");
