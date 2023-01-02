@@ -14,6 +14,6 @@ class SplashScreen extends GetView<SplashController> {
       body: Container(
         height: 100.h,
         width: 100.w,
-        child: Image.asset("assets/ic_login4.png",fit: BoxFit.fill,)),);
+        child: Image.asset("assets/splash5.jpg",fit: BoxFit.fill,)),);
   }
 }
