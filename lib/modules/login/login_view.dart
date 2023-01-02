@@ -28,14 +28,14 @@ class LoginScreen extends GetView<LoginController> {
               ),
               CustomTextField(
                   controller: controller.email,
-                  hintText: "deneme",
+                  hintText: "Email",
                   obscureText: false),
               SizedBox(
                 height: 5.h,
               ),
               CustomTextField(
                   controller: controller.password,
-                  hintText: "dasdas",
+                  hintText: "Password",
                   obscureText: false),
               SizedBox(
                 height: 5.h,
@@ -50,7 +50,7 @@ class LoginScreen extends GetView<LoginController> {
                             borderRadius: BorderRadius.circular(5.h))),
                     onPressed: () {
                       controller.auth.signInUser(controller.email.text, controller.password.text);
-                      Get.toNamed(Routes.HOME);
+                     
                     },
                     child: Row(
                       children: [

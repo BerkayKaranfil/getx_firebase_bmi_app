@@ -51,7 +51,7 @@ class RegisterScreen extends GetView<RegisterController> {
                     onPressed: () {
                       controller.auth.createUser(
                           controller.email.text, controller.password.text);
-                      Get.toNamed(Routes.LOGIN);
+                     
                     },
                     child: Row(
                       children: [
