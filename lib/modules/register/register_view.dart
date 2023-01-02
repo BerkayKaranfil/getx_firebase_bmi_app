@@ -2,23 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
-import 'package:getx_firebase_bmi_app/modules/login/login_controller.dart';
+import 'package:getx_firebase_bmi_app/modules/register/register_controller.dart';
 import 'package:getx_firebase_bmi_app/routes/app_pages.dart';
+import 'package:getx_firebase_bmi_app/widgets/text_form_field_widget.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-import '../../widgets/text_form_field_widget.dart';
-
-class LoginScreen extends GetView<LoginController> {
-  LoginScreen({super.key});
+class RegisterScreen extends GetView<RegisterController> {
+  const RegisterScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       backgroundColor: Color(0xffE5E5E5),
+
       // resizeToAvoidBottomInset: false,
       body: SingleChildScrollView(
-        reverse: true,
+        // reverse: true,
         child: Padding(
           padding: EdgeInsets.only(right: 5.w, left: 5.w),
           child: Column(
@@ -28,14 +28,14 @@ class LoginScreen extends GetView<LoginController> {
               ),
               CustomTextField(
                   controller: controller.email,
-                  hintText: "deneme",
+                  hintText: "Email adresinizi giriniz",
                   obscureText: false),
               SizedBox(
                 height: 5.h,
               ),
               CustomTextField(
                   controller: controller.password,
-                  hintText: "dasdas",
+                  hintText: "Password giriniz",
                   obscureText: false),
               SizedBox(
                 height: 5.h,
@@ -49,15 +49,16 @@ class LoginScreen extends GetView<LoginController> {
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(5.h))),
                     onPressed: () {
-                      controller.auth.signInUser(controller.email.text, controller.password.text);
-                      Get.toNamed(Routes.HOME);
+                      controller.auth.createUser(
+                          controller.email.text, controller.password.text);
+                      Get.toNamed(Routes.LOGIN);
                     },
                     child: Row(
                       children: [
                         Spacer(
                           flex: 8,
                         ),
-                        Text("LOGIN"),
+                        Text("REGISTER"),
                         Spacer(
                           flex: 5,
                         ),
@@ -73,39 +74,9 @@ class LoginScreen extends GetView<LoginController> {
                        
                       ],
                     )
-                    //Text("LOGIN")
+                    //Text("REGISTER"),
                     ),
               ),
-              SizedBox(
-                height: 10.h,
-              ),
-              SizedBox(
-                width: 55.w,
-                child: Row(
-                  children: [
-                    Text(
-                      "Do not have account?",
-                      style: TextStyle(color: Color(0xff949494)),
-                    ),
-                    TextButton(
-                        onPressed: () {
-                          Get.toNamed(Routes.REGISTER);
-                        },
-                        child: Text(
-                          "Sign up.",
-                          style: TextStyle(
-                              color: Color(0xff949494),
-                              fontSize: 2.h,
-                              fontWeight: FontWeight.bold),
-                        )),
-                    /* Padding(
-                        padding: EdgeInsets.only(
-                            bottom: MediaQuery.of(context).viewInsets.bottom > 0
-                                ? 27.h
-                                : 0)), */
-                  ],
-                ),
-              )
             ],
           ),
         ),

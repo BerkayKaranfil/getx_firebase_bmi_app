@@ -3,9 +3,12 @@ import 'package:get/get.dart';
 import 'package:getx_firebase_bmi_app/modules/splash/splash_view.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
+import 'di.dart';
 import 'routes/app_pages.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await DependencyInjection.init();
   runApp(const MyApp());
 }
 

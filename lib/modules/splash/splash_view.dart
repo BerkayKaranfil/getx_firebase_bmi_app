@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:getx_firebase_bmi_app/modules/splash/splash_controller.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 
 class SplashScreen extends GetView<SplashController> {
   const SplashScreen({super.key});
@@ -10,8 +11,9 @@ class SplashScreen extends GetView<SplashController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Icon(Icons.flutter_dash, size: 200,),
-      ),);
+      body: Container(
+        height: 100.h,
+        width: 100.w,
+        child: Image.asset("assets/ic_login4.png",fit: BoxFit.fill,)),);
   }
 }
