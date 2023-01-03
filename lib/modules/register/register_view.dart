@@ -13,7 +13,6 @@ class RegisterScreen extends GetView<RegisterController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
       backgroundColor: Color(0xffE5E5E5),
 
       // resizeToAvoidBottomInset: false,
@@ -51,7 +50,6 @@ class RegisterScreen extends GetView<RegisterController> {
                     onPressed: () {
                       controller.auth.createUser(
                           controller.email.text, controller.password.text);
-                     
                     },
                     child: Row(
                       children: [
@@ -66,17 +64,43 @@ class RegisterScreen extends GetView<RegisterController> {
                           height: 5.h,
                           width: 10.w,
                           decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(40)
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(40)),
+                          child: Icon(
+                            Icons.arrow_right_alt,
+                            color: Color(0xff032681),
                           ),
-                          child: Icon(Icons.arrow_right_alt, color: Color(0xff032681),),
                         ),
-                       
                       ],
                     )
                     //Text("REGISTER"),
                     ),
               ),
+              SizedBox(
+                height: 10.h,
+              ),
+              SizedBox(
+                width: 56.w,
+                child: Row(
+                  children: [
+                    Text(
+                      "Do you have an account?",
+                      style: TextStyle(color: Color(0xff949494)),
+                    ),
+                    TextButton(
+                        onPressed: () {
+                          Get.back();
+                        },
+                        child: Text(
+                          "Login",
+                          style: TextStyle(
+                              color: Color(0xff949494),
+                              fontSize: 2.h,
+                              fontWeight: FontWeight.bold),
+                        )),
+                  ],
+                ),
+              )
             ],
           ),
         ),

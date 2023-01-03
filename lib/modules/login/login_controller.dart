@@ -26,6 +26,9 @@ class LoginController extends GetxController {
           ));
     }
     await auth.signInUser(email.text, password.text);
-    Get.toNamed(Routes.HOME);
+     if(Get.isDialogOpen!){
+      Get.back();
+    } 
+    // Get.toNamed(Routes.HOME);
   }
 }

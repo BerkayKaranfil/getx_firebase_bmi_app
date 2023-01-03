@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:getx_firebase_bmi_app/modules/login/login_controller.dart';
 import 'package:getx_firebase_bmi_app/routes/app_pages.dart';
+import 'package:getx_firebase_bmi_app/widgets/password_text_field_widget.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 import '../../widgets/text_form_field_widget.dart';
@@ -23,9 +24,12 @@ class LoginScreen extends GetView<LoginController> {
           padding: EdgeInsets.only(right: 5.w, left: 5.w),
           child: Column(
             children: [
-              //Image.asset("assets/loginhome.png")
               SizedBox(
-                height: 30.h,
+                height: 4.h,
+              ),
+              Image.asset("assets/loginhome.png"),
+              SizedBox(
+                height: 5.h,
               ),
               CustomTextField(
                   controller: controller.email,
@@ -34,7 +38,7 @@ class LoginScreen extends GetView<LoginController> {
               SizedBox(
                 height: 5.h,
               ),
-              CustomTextField(
+              PasswordTextFormField(
                   controller: controller.password,
                   hintText: "Password",
                   obscureText: false),
@@ -50,8 +54,9 @@ class LoginScreen extends GetView<LoginController> {
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(5.h))),
                     onPressed: () {
-                     // controller.auth.signInUser(controller.email.text, controller.password.text);
-                     controller.loginWait();
+                      // controller.auth.signInUser(controller.email.text, controller.password.text);
+                      controller.loginWait();
+                    
                     },
                     child: Row(
                       children: [
@@ -66,12 +71,13 @@ class LoginScreen extends GetView<LoginController> {
                           height: 5.h,
                           width: 10.w,
                           decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(40)
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(40)),
+                          child: Icon(
+                            Icons.arrow_right_alt,
+                            color: Color(0xff032681),
                           ),
-                          child: Icon(Icons.arrow_right_alt, color: Color(0xff032681),),
                         ),
-                       
                       ],
                     )
                     //Text("LOGIN")
@@ -80,6 +86,7 @@ class LoginScreen extends GetView<LoginController> {
               SizedBox(
                 height: 10.h,
               ),
+
               SizedBox(
                 width: 55.w,
                 child: Row(

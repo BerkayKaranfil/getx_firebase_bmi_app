@@ -14,6 +14,14 @@ class SplashScreen extends GetView<SplashController> {
       body: Container(
         height: 100.h,
         width: 100.w,
-        child: Image.asset("assets/splash5.jpg",fit: BoxFit.fill,)),);
+        child: Center(
+          child: Icon(Icons.flutter_dash, size: 20.h, color: Color(0xff032681),),
+        ),
+        /* child: Image.asset(
+          "assets/splash5.jpg",
+          fit: BoxFit.fill,
+        ), */
+      ),
+    );
   }
 }

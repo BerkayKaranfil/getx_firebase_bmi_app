@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 
 import 'shared/services/auth_service.dart';
 import 'shared/services/firebase_service.dart';
+import 'shared/services/firestore_service.dart';
 
 class DependencyInjection {
   static init() async {
@@ -9,7 +10,7 @@ class DependencyInjection {
     //Önce firebase servislerinin gelmesi gerekiyor yoksa authservise gelemez.
     await Get.putAsync(() => FirebaseService().init());
     await Get.putAsync(() => AuthService().init());
-   // await Get.putAsync(() => FirestoreService().init());
+    await Get.putAsync(() => FirestoreService().init());
    // await Get.putAsync(() => AnalyticsService().init());
   }
 }

@@ -22,6 +22,18 @@ class HomeController extends GetxController{
   }
   //Gender Button//
 
+// chanceGenderColor: Gender butonlarına basıldığında altıkları renkler için.
+  chanceGenderColor(){
+    switch (genderIndex.value) {
+      case 0:
+        return Color(0xff032681);
+      case 1:
+        return Colors.pink.shade300;
+      case 2:
+        return Colors.purple.shade700;    
+    }
+  }
+
   void bmiCalculator() {
     result = weight / ((height / 100) * (height / 100));
     // print(result);
@@ -51,6 +63,7 @@ class HomeController extends GetxController{
 
 
   void setDetail() {
+    // Buraya age,height,weight lerin herhangi birinin boş olması durumunda hata çıkartacak bir kontrol yaz *** 
     if (age.value <= 0 || age.value > 120) {
       Get.defaultDialog(
           title: "!",
