@@ -9,6 +9,20 @@ class LoginController extends GetxController {
   TextEditingController password = TextEditingController();
   AuthService auth = AuthService();
 
+  RxBool isVisibil = true.obs;
+
+  chanceVisibility(){
+    isVisibil.value = !isVisibil.value;
+  }
+
+  chanceVisibilityIcon(){
+    if (isVisibil == false) {
+      return Icons.visibility;      
+    } else {
+      return Icons.visibility_off;
+    }
+  }
+
   // RxBool isAutoValidate = false.obs;
   // RxBool isRequestAvaible = false.obs;
 

@@ -39,9 +39,10 @@ class LoginScreen extends GetView<LoginController> {
                 height: 5.h,
               ),
               PasswordTextFormField(
-                  controller: controller.password,
+                 // controller: controller.password,
+                 controllerr: controller.password,
                   hintText: "Password",
-                  obscureText: false),
+                  obscureText: controller.isVisibil.value),
               SizedBox(
                 height: 5.h,
               ),
@@ -113,7 +114,8 @@ class LoginScreen extends GetView<LoginController> {
                                 : 0)), */
                   ],
                 ),
-              )
+              ),
+             
             ],
           ),
         ),
@@ -121,3 +123,4 @@ class LoginScreen extends GetView<LoginController> {
     );
   }
 }
+
